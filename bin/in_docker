@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+use_sudo = `uname` != "Darwin" && !system("groups | grep -qw docker")
+open_nrepl_port = ARGV[0] == "lein" && ARGV[1] == "repl"
+
+cmd = use_sudo ? ["sudo"] : []
+cmd += ["docker-compose", "run"]
+cmd += ["-p" "4001:4001"] if open_nrepl_port
+cmd += ["logger"]
+cmd += ARGV
+
+exec(*cmd)
