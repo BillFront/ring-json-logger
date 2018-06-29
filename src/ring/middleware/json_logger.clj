@@ -1,8 +1,6 @@
 (ns ring.middleware.json-logger
   (:require [clojure.data.json :as json]))
 
-
-
 (defn wrap-json-logger [handler]
   (fn [request]
     (let [start (System/currentTimeMillis)
