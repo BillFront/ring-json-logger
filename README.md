@@ -3,6 +3,9 @@
 
 # ring-json-logger
 
+[![Clojars Project](https://img.shields.io/clojars/v/ring-json-logger.svg)](https://clojars.org/ring-json-logger)
+![license](https://img.shields.io/github/license/BillFront/ring-json-logger.svg)
+
 This is a ring middleware to response time and other details about the requests arriving at your web server in a JSON format to `stdout`.
 
 > A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles. Instead, each running process writes its event stream, unbuffered, to `stdout`.  
